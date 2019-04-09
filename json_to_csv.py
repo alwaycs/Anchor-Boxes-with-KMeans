@@ -8,11 +8,11 @@ from PIL import Image
 def json_to_csv(name_list, img_dir, gt_dir):
     json_list = []
     for name in name_list:
-        image_path = os.path.join(img_dir, name)
+        image_path = os.path.join(img_dir, name.strip('\n'))
         im = Image.open(image_path)
         width, height = im.size
         gt_name = name.repalce('.jpg', '.json')
-        gt_path = os.path.join(gt_dir, gt_name)
+        gt_path = os.path.join(gt_dir, gt_name.strip('\n'))
         with open (gt_path) as f:
             anno = json.load(f)
             lines = anno['lines']
