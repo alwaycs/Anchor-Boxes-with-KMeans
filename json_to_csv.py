@@ -11,7 +11,7 @@ def json_to_csv(name_list, img_dir, gt_dir):
         image_path = os.path.join(img_dir, name.strip('\n'))
         im = Image.open(image_path)
         width, height = im.size
-        gt_name = name.repalce('.jpg', '.json')
+        gt_name = name.replace('.jpg', '.json')
         gt_path = os.path.join(gt_dir, gt_name.strip('\n'))
         with open (gt_path) as f:
             anno = json.load(f)
