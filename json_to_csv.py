@@ -38,7 +38,7 @@ def main():
     work_dir = os.getcwd()
     with open(train_txt) as f_train:
         train_name=f_train.readlines()
-        all_name = train_name
+        all_name = train_name.copy()
         print(len(train_name), type(train_name))
     with open(test_txt) as f_test:
         test_name=f_test.readlines()
