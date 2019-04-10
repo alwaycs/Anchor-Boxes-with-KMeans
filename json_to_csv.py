@@ -44,8 +44,8 @@ def main():
         test_name=f_test.readlines()
         print(len(test_name))
     all_name.extend(test_name)
-    print(all_name, len(all_name))
-    print(len(train_name), type(train_name))
+    print("all_name", len(all_name))
+    print("train_name", len(train_name))
 
 
     for flag, path_list in zip(['train', 'test', 'all'], [train_name, test_name, all_name]):
