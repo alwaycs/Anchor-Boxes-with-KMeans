@@ -44,16 +44,14 @@ def main():
         test_name=f_test.readlines()
         print(len(test_name))
     all_name.extend(test_name)
-    print("all_name", len(all_name))
-    print("train_name", len(train_name))
 
 
     for flag, path_list in zip(['train', 'test', 'all'], [train_name, test_name, all_name]):
-        print('start aonvert:', flag)
+        print('start convert ', flag)
         json_df = json_to_csv(path_list, img_dir, gt_dir)
         csv_path = os.path.join(work_dir, flag + '_labels.csv')
         json_df.to_csv(csv_path, index=None)
-        print('Successfully converted ', flag, 'json to csv.')
+        print('Successfully converted', flag, 'json to csv.')
 
 
 main()
