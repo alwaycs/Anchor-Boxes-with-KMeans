@@ -38,8 +38,8 @@ def main():
     work_dir = os.getcwd()
     with open(train_txt) as f_train:
         train_name=f_train.readlines()
-        print(len(train_name))
-    with open(train_txt) as f_test:
+        print(len(train_name), type(train_name))
+    with open(test_txt) as f_test:
         test_name=f_test.readlines()
         print(len(test_name))
     all_name = train_name.extend(test_name)
